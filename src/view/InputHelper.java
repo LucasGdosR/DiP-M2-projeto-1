@@ -10,4 +10,8 @@ public class InputHelper {
         Integer option = scanner.nextInt();
         return option;
     }
+
+    public static void treatException() {
+        scanner.nextLine();
+    }
 }

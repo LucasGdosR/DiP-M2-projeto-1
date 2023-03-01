@@ -6,7 +6,7 @@ import view.Menu;
 
 public class PerformMedicalProcedureMenu extends LeafMenu {
     public PerformMedicalProcedureMenu(Menu previousMenu, Controller controller) {
-        super("Realizar de Atendimento Médico", previousMenu, controller);
+        super("Realizar Atendimento Médico", previousMenu, controller);
     }
 
     @Override
