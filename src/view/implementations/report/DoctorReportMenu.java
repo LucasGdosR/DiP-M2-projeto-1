@@ -1,4 +1,4 @@
-package view.implementations;
+package view.implementations.report;
 
 import controller.Controller;
 import view.LeafMenu;
