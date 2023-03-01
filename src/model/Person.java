@@ -2,9 +2,9 @@ package model;
 
 import java.time.LocalDate;
 
-public abstract class Person {
-    private static int nextId = 0;
-    private final int id;
+public class Person {
+    protected static int nextId = 0;
+    protected int id;
     private final String fullName;
     private final Gender gender;
     private final LocalDate birthday;
@@ -12,7 +12,6 @@ public abstract class Person {
     private final String telephone;
 
     public Person(String fullName, Gender gender, LocalDate birthday, String cpf, String telephone) {
-        this.id = nextId++;
         this.fullName = fullName;
         this.gender = gender;
         this.birthday = birthday;
@@ -30,5 +29,25 @@ public abstract class Person {
 
     public String getCpf() {
         return cpf;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public String basicToString() {
+        return "Id: %d; CPF: %s; Nome: %s.".formatted(this.id, this.cpf, this.fullName);
+    }
+
+    public static Integer getNextId() {
+        return nextId;
     }
 }
