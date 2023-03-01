@@ -12,8 +12,18 @@ public abstract class CompositeMenu extends Menu {
 
     @Override
     protected void action() {
-        showSubmenus();
-        Menu menu = selectSubmenu();
+        Menu menu = null;
+        while (menu == null) {
+            try {
+                showSubmenus();
+                menu = selectSubmenu();
+            } catch (IndexOutOfBoundsException e) {
+                System.out.println("Número inválido. Confira as opções:");
+            } catch (Exception e) {
+                System.out.println("Entrada inválida. Digite apenas um número. Confira as opções:");
+                InputHelper.treatException();
+            }
+        }
         menu.act();
     }
 
