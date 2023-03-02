@@ -53,6 +53,7 @@ public class Patient extends Person {
 
     public void receiveTreatment() {
         this.numberOfTreatmentsReceived++;
+        setStatus(Status.TREATMENT_IN_PROGRESS);
     }
 
     public String fullToString() {
